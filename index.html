@@ -1,22 +1,26 @@
 <!DOCTYPE HTML>
 <!--
 	VIOXERA
-	vioxera.com | @vioxeranewfoods
-	Coming soon
 -->
-<html lang="en">
+<html>
 	<head>
 		<title>VIOXERA</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		
-		<!-- SEO -->
 		<meta name="description" content="Next-generation protein ingredients for pet food and human nutrition." />
 		
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 
 	<body class="is-preload">
+
+		<!-- 🔥 BACKGROUND SLIDER (CLAVE) -->
+		<div id="bg">
+			<div style="background-image: url('images/bg01.jpg');"></div>
+			<div style="background-image: url('images/bg02.jpg');"></div>
+			<div style="background-image: url('images/bg03.jpg');"></div>
+		</div>
 
 		<!-- Header -->
 		<header id="header">
@@ -28,38 +32,21 @@
 		</header>
 
 		<!-- Signup Form -->
-		<section>
-			<form id="signup-form" method="POST" action="https://formspree.io/f/xbdwdjoj">
-				<input 
-					type="email" 
-					name="email" 
-					id="email" 
-					placeholder="Enter your email" 
-					required 
-				/>
-				<input type="submit" value="Sign Up" />
-			</form>
-
-			<!-- Mensaje de éxito -->
-			<div id="form-message" style="display:none; margin-top:15px; color:#00ffcc;">
-				<p>✅ You're in. We'll keep you posted.</p>
-			</div>
-		</section>
+		<form id="signup-form" method="post" action="https://formspree.io/f/xbdwdjoj">
+			<input type="email" name="email" id="email" placeholder="Enter your email" required />
+			<input type="submit" value="Sign Up" />
+		</form>
 
 		<!-- Footer -->
 		<footer id="footer">
 			<ul class="icons">
 				<li>
-					<a href="https://instagram.com/vioxeranewfoods" 
-					   target="_blank" 
-					   rel="noopener noreferrer"
-					   class="icon brands fa-instagram">
+					<a href="https://instagram.com/vioxeranewfoods" target="_blank" class="icon brands fa-instagram">
 						<span class="label">Instagram</span>
 					</a>
 				</li>
 				<li>
-					<a href="mailto:info@vioxera.com?subject=Contact%20from%20website&body=Hello,%20I%20would%20like%20more%20information" 
-					   class="icon fa-envelope">
+					<a href="mailto:info@vioxera.com?subject=Contact%20from%20website" class="icon fa-envelope">
 						<span class="label">Email</span>
 					</a>
 				</li>
@@ -72,33 +59,6 @@
 
 		<!-- Scripts -->
 		<script src="assets/js/main.js"></script>
-
-		<!-- Formspree AJAX -->
-		<script>
-			const form = document.getElementById('signup-form');
-			const message = document.getElementById('form-message');
-
-			form.addEventListener('submit', async function(e) {
-				e.preventDefault();
-
-				const data = new FormData(form);
-
-				const response = await fetch(form.action, {
-					method: form.method,
-					body: data,
-					headers: {
-						'Accept': 'application/json'
-					}
-				});
-
-				if (response.ok) {
-					form.reset();
-					message.style.display = 'block';
-				} else {
-					alert("Oops! Something went wrong.");
-				}
-			});
-		</script>
 
 	</body>
 </html>
